@@ -39,7 +39,7 @@ app.post('/slackQuotes', (request, response) => {
   const collectionQuotes = data.collection('quotes');
   collectionQuotes.find().toArray()
     .then(results => {
-      let slack = slackTemplate(results[0]);
+      let slack = slackTemplate(results[1]);
       response.json(slack);
     })
     .catch(err => console.log(err));
